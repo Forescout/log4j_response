@@ -118,7 +118,7 @@ All our findings are also used to improve Forescout products and artifacts. eyeS
 Other resources
 ===============
 
-*	There are several organizations and people collecting and continuously updating lists of affected vendors and software, including [CISA](https://github.com/cisagov/log4j-affected-db), [NCSC-NL](https://github.com/NCSC-NL/log4shell/blob/main/software/README.md), [Authomize](https://github.com/authomize/log4j-log4shell-affected) and [SwitHak](https://gist.github.com/SwitHak/7e1bfa1e36a5f1f02d900062d188a8a4).
+*	There are several organizations and people collecting and continuously updating lists of affected vendors and software, including [CISA](https://github.com/cisagov/log4j-affected-db), [CERT/CC](https://www.kb.cert.org/vuls/id/930724), [NCSC-NL](https://github.com/NCSC-NL/log4shell/blob/main/software/README.md), [Authomize](https://github.com/authomize/log4j-log4shell-affected) and [SwitHak](https://gist.github.com/SwitHak/7e1bfa1e36a5f1f02d900062d188a8a4).
 *	There are several descriptions of known ongoing attack campaigns (with IoCs that can be used for detection), including [Khonsari ransomware](https://otx.alienvault.com/pulse/61b89fa75b38538e2395d0ec), [Kinsing cryptominer](https://threatfox.abuse.ch/browse/tag/log4j/) and [ten more malicious samples: Muhstik, Mirai, Elknot/BillGates, m8220, SitesLoader, xmrig.pe, xmrig.ELF, 3 unnamed](https://blog.netlab.360.com/ten-families-of-malicious-samples-are-spreading-using-the-log4j2-vulnerability-now/)
 *	[CISA Vulnerability Guidance](https://www.cisa.gov/uscert/apache-log4j-vulnerability-guidance)
 *	[Network Detection (including Snort rules) from NCC Group](https://research.nccgroup.com/2021/12/12/log4shell-reconnaissance-and-post-exploitation-network-detection/) 
